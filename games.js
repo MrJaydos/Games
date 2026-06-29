@@ -1,0 +1,32 @@
+// Add a new game by appending one object to this array.
+// Fields:
+//   name        — display name shown on the tile
+//   description — one-line subtitle
+//   url         — full URL the tile links to (opens in new tab)
+//   icon        — emoji or short text rendered as the tile icon
+//   accentColor — CSS color used for hover glow and accent line
+
+const games = [
+  {
+    name: "Snake",
+    description: "Classic snake — grow as long as you can without hitting the walls.",
+    url: "https://snake.alfi3.com",
+    icon: "🐍",
+    accentColor: "#39d353",
+  },
+  {
+    name: "Afterglow",
+    description: "A high-speed platformer built for speedrunners. Go fast.",
+    url: "https://afterglow.alfi3.com",
+    icon: "⚡",
+    accentColor: "#ff6b35",
+  },
+  {
+    // TODO: replace with live URL when Solitaire is deployed
+    name: "Solitaire",
+    description: "Classic Klondike solitaire. One card at a time.",
+    url: "https://solitaire.alfi3.com",
+    icon: "🃏",
+    accentColor: "#7c6fff",
+  },
+];

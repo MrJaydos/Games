@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>alfi3 · Games</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <div class="header-inner">
+        <span class="logo" aria-hidden="true">🕹</span>
+        <h1>alfi3 <span class="header-sub">/ games</span></h1>
+      </div>
+    </header>
+
+    <main>
+      <div id="game-grid" class="grid" role="list"></div>
+    </main>
+
+    <footer>
+      <p>Self-hosted on the homelab · <a href="https://github.com" target="_blank" rel="noopener noreferrer">GitHub</a></p>
+    </footer>
+
+    <!-- games.js must load before app.js -->
+    <script src="games.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
