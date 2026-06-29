@@ -3,8 +3,9 @@
 //   name        — display name shown on the tile
 //   description — one-line subtitle
 //   url         — full URL the tile links to (opens in new tab)
-//   icon        — emoji or short text rendered as the tile icon
+//   icon        — emoji or short text rendered as the tile icon (shown when no thumbnail)
 //   accentColor — CSS color used for hover glow and accent line
+//   thumbnail   — (optional) path to a preview image, e.g. "thumbnails/mygame.svg"
 
 const games = [
   {
@@ -13,6 +14,7 @@ const games = [
     url: "https://snake.alfi3.com",
     icon: "🐍",
     accentColor: "#39d353",
+    thumbnail: "thumbnails/snake.svg",
   },
   {
     name: "Afterglow",
@@ -20,6 +22,7 @@ const games = [
     url: "https://afterglow.alfi3.com",
     icon: "⚡",
     accentColor: "#ff6b35",
+    thumbnail: "thumbnails/afterglow.svg",
   },
   {
     name: "Solitaire",
@@ -27,5 +30,6 @@ const games = [
     url: "https://solitaire.alfi3.com",
     icon: "🃏",
     accentColor: "#7c6fff",
+    thumbnail: "thumbnails/solitaire.svg",
   },
 ];

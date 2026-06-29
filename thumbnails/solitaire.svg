@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 140">
+  <defs>
+    <filter id="cs">
+      <feDropShadow dx="1" dy="2" stdDeviation="2.5" flood-color="rgba(0,0,0,0.7)"/>
+    </filter>
+    <pattern id="felt" width="12" height="12" patternUnits="userSpaceOnUse">
+      <path d="M12 0L0 0 0 12" fill="none" stroke="#0d2012" stroke-width="0.4"/>
+    </pattern>
+  </defs>
+  <!-- Felt background -->
+  <rect width="260" height="140" fill="#091a0e"/>
+  <rect width="260" height="140" fill="url(#felt)"/>
+  <!-- Card fan — all pivot from (130, 160), cards at x=109 y=75 w=42 h=65 -->
+  <!-- -24 deg -->
+  <g transform="rotate(-24, 130, 160)">
+    <rect x="109" y="75" width="42" height="65" rx="4" fill="#e8dfd4" filter="url(#cs)"/>
+    <text x="114" y="91"  font-size="9"  font-family="Georgia,serif" fill="#1a1a3a">A</text>
+    <text x="113" y="101" font-size="12" font-family="Georgia,serif" fill="#1a1a3a">♠</text>
+  </g>
+  <!-- -12 deg -->
+  <g transform="rotate(-12, 130, 160)">
+    <rect x="109" y="75" width="42" height="65" rx="4" fill="#ede6db" filter="url(#cs)"/>
+    <text x="114" y="91"  font-size="9"  font-family="Georgia,serif" fill="#c41e3a">K</text>
+    <text x="113" y="101" font-size="12" font-family="Georgia,serif" fill="#c41e3a">♥</text>
+  </g>
+  <!-- 0 deg — Ace of Diamonds (top card, most visible) -->
+  <rect x="109" y="75" width="42" height="65" rx="4" fill="#ffffff" filter="url(#cs)"/>
+  <text x="114" y="91"  font-size="9"  font-family="Georgia,serif" fill="#c41e3a">A</text>
+  <text x="113" y="101" font-size="12" font-family="Georgia,serif" fill="#c41e3a">♦</text>
+  <text x="123" y="122" font-size="22" font-family="Georgia,serif" fill="#c41e3a">♦</text>
+  <!-- +12 deg -->
+  <g transform="rotate(12, 130, 160)">
+    <rect x="109" y="75" width="42" height="65" rx="4" fill="#ede6db" filter="url(#cs)"/>
+    <text x="114" y="91"  font-size="9"  font-family="Georgia,serif" fill="#1a4a1a">Q</text>
+    <text x="113" y="101" font-size="12" font-family="Georgia,serif" fill="#1a4a1a">♣</text>
+  </g>
+  <!-- +24 deg -->
+  <g transform="rotate(24, 130, 160)">
+    <rect x="109" y="75" width="42" height="65" rx="4" fill="#e8dfd4" filter="url(#cs)"/>
+    <text x="114" y="91"  font-size="9"  font-family="Georgia,serif" fill="#c41e3a">J</text>
+    <text x="113" y="101" font-size="12" font-family="Georgia,serif" fill="#c41e3a">♥</text>
+  </g>
+</svg>

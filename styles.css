@@ -26,6 +26,22 @@ body {
   flex-direction: column;
 }
 
+/* Scanlines overlay */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 3px,
+    rgba(0, 0, 0, 0.07) 3px,
+    rgba(0, 0, 0, 0.07) 4px
+  );
+  pointer-events: none;
+  z-index: 9999;
+}
+
 /* ── Header ── */
 header {
   border-bottom: 1px solid var(--border);
@@ -75,8 +91,7 @@ main {
   position: relative;
   display: flex;
   flex-direction: column;
-  gap: 8px;
-  padding: 24px;
+  padding: 0;
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius);
@@ -88,7 +103,7 @@ main {
     box-shadow var(--transition),
     border-color var(--transition);
 
-  /* top accent stripe */
+  /* top accent stripe — overlays thumbnail when present */
   &::before {
     content: "";
     position: absolute;
@@ -96,6 +111,7 @@ main {
     height: 3px;
     background: var(--accent);
     opacity: 0.6;
+    z-index: 1;
     transition: opacity var(--transition);
   }
 }
@@ -108,9 +124,35 @@ main {
 
   &::before { opacity: 1; }
   .tile-arrow { opacity: 1; transform: translate(2px, -2px); }
+  .tile-thumb img { transform: scale(1.04); }
 }
 
 .tile:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+/* Thumbnail */
+.tile-thumb {
+  width: 100%;
+  aspect-ratio: 2 / 1;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.tile-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 300ms ease;
+}
+
+/* Body (info section below thumbnail, or full tile when no thumbnail) */
+.tile-body {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 20px 24px 24px;
+  flex: 1;
+}
 
 .tile-icon {
   font-size: 2.4rem;
@@ -162,7 +204,7 @@ footer a:hover { color: var(--text); }
 @media (max-width: 600px) {
   .grid { grid-template-columns: 1fr 1fr; gap: 14px; }
   main { padding: 24px 16px; }
-  .tile { padding: 18px; }
+  .tile-body { padding: 14px 16px 16px; }
   .tile-icon { font-size: 2rem; }
 }
 
