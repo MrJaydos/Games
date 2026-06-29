@@ -22,7 +22,6 @@ const games = [
     accentColor: "#ff6b35",
   },
   {
-    // TODO: replace with live URL when Solitaire is deployed
     name: "Solitaire",
     description: "Classic Klondike solitaire. One card at a time.",
     url: "https://solitaire.alfi3.com",
