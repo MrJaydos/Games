@@ -33,4 +33,12 @@ const games = [
     accentColor: "#7c6fff",
     thumbnail: "thumbnails/solitaire.svg",
   },
+  {
+    name: "Pac-Man",
+    description: "Eat all the dots, dodge the ghosts. Waka waka.",
+    url: "https://pacman.alfi3.com",
+    icon: "👾",
+    accentColor: "#ffcc00",
+    thumbnail: "thumbnails/pacman.svg",
+  },
 ];

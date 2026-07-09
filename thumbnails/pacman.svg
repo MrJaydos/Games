@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 140">
+  <defs>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="glow-s" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="1.5" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="260" height="140" fill="#00001a"/>
+
+  <!-- Maze walls -->
+  <!-- Outer border -->
+  <rect x="10"  y="10"  width="240" height="120" rx="6" fill="none" stroke="#2121de" stroke-width="4"/>
+  <!-- Horizontal divider top -->
+  <line x1="10"  y1="42" x2="80"  y2="42" stroke="#2121de" stroke-width="4"/>
+  <line x1="180" y1="42" x2="250" y2="42" stroke="#2121de" stroke-width="4"/>
+  <!-- Horizontal divider bottom -->
+  <line x1="10"  y1="98" x2="80"  y2="98" stroke="#2121de" stroke-width="4"/>
+  <line x1="180" y1="98" x2="250" y2="98" stroke="#2121de" stroke-width="4"/>
+  <!-- Center box (ghost house) -->
+  <rect x="100" y="52" width="60" height="36" rx="3" fill="none" stroke="#2121de" stroke-width="3"/>
+
+  <!-- Pellet trail Pac-Man is eating (left side) -->
+  <circle cx="42"  cy="70" r="3" fill="#ffcc00" filter="url(#glow-s)"/>
+  <circle cx="62"  cy="70" r="3" fill="#ffcc00" filter="url(#glow-s)"/>
+  <!-- eaten (gaps where Pac-Man passed) -->
+  <!-- Power pellet (left corner) -->
+  <circle cx="22" cy="24" r="6" fill="#ffcc00" filter="url(#glow)"/>
+
+  <!-- Dots on right side -->
+  <circle cx="160" cy="70" r="3" fill="#ffb8ae" opacity="0.9"/>
+  <circle cx="180" cy="70" r="3" fill="#ffb8ae" opacity="0.9"/>
+  <circle cx="200" cy="70" r="3" fill="#ffb8ae" opacity="0.9"/>
+  <circle cx="220" cy="70" r="3" fill="#ffb8ae" opacity="0.9"/>
+  <!-- Power pellet (right corner) -->
+  <circle cx="238" cy="24" r="6" fill="#ffcc00" filter="url(#glow)"/>
+
+  <!-- Top dots -->
+  <circle cx="130" cy="24" r="2.5" fill="#ffb8ae" opacity="0.8"/>
+  <circle cx="110" cy="24" r="2.5" fill="#ffb8ae" opacity="0.8"/>
+  <circle cx="150" cy="24" r="2.5" fill="#ffb8ae" opacity="0.8"/>
+
+  <!-- Pac-Man (mouth open ~40deg, facing right) -->
+  <!-- Using a path: move to center, line to top-right at angle, arc, line back -->
+  <path d="M 88 70 L 108 59 A 22 22 0 1 0 108 81 Z" fill="#ffcc00" filter="url(#glow)"/>
+
+  <!-- Ghost (Blinky - red) chasing Pac-Man -->
+  <g transform="translate(30, 58)" filter="url(#glow-s)">
+    <!-- Body -->
+    <path d="M0 24 Q0 0 12 0 Q24 0 24 24 Q20 20 16 24 Q12 20 8 24 Q4 20 0 24Z" fill="#ff0000"/>
+    <!-- Eyes -->
+    <ellipse cx="8"  cy="10" rx="4" ry="5" fill="white"/>
+    <ellipse cx="16" cy="10" rx="4" ry="5" fill="white"/>
+    <circle  cx="9"  cy="11" r="2.5" fill="#2121de"/>
+    <circle  cx="17" cy="11" r="2.5" fill="#2121de"/>
+  </g>
+
+  <!-- Score text -->
+  <text x="238" y="118" font-size="10" font-family="monospace" fill="#ffcc00" text-anchor="end" opacity="0.7">3200</text>
+</svg>
