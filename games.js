@@ -6,6 +6,7 @@
 //   icon        — emoji or short text rendered as the tile icon (shown when no thumbnail)
 //   accentColor — CSS color used for hover glow and accent line
 //   thumbnail   — (optional) path to a preview image, e.g. "thumbnails/mygame.svg"
+//   comingSoon  — (optional) set to true to dim the tile and disable the link
 
 const games = [
   {

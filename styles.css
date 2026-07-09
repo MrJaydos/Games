@@ -86,6 +86,11 @@ main {
 }
 
 /* ── Tiles ── */
+@keyframes tile-in {
+  from { opacity: 0; translate: 0 10px; }
+  to   { opacity: 1; translate: 0 0; }
+}
+
 .tile {
   --glow: color-mix(in srgb, var(--accent) 35%, transparent);
   position: relative;
@@ -102,6 +107,8 @@ main {
     transform var(--transition),
     box-shadow var(--transition),
     border-color var(--transition);
+  animation: tile-in 350ms ease both;
+  animation-delay: calc(var(--i, 0) * 75ms);
 
   /* top accent stripe — overlays thumbnail when present */
   &::before {
@@ -129,6 +136,21 @@ main {
 
 .tile:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
 
+/* Coming soon — dimmed, non-interactive */
+.tile--coming-soon {
+  cursor: default;
+  opacity: 0.5;
+  filter: grayscale(30%);
+}
+
+.tile--coming-soon:hover {
+  transform: none;
+  box-shadow: none;
+  border-color: var(--border);
+
+  &::before { opacity: 0.6; }
+}
+
 /* Thumbnail */
 .tile-thumb {
   width: 100%;
@@ -152,6 +174,32 @@ main {
   gap: 8px;
   padding: 20px 24px 24px;
   flex: 1;
+}
+
+/* Name + badge row */
+.tile-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.tile-badge {
+  font-size: 0.68rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 2px 7px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--surface-2);
+  color: var(--text-muted);
+}
+
+.tile--coming-soon .tile-badge {
+  color: var(--accent);
+  border-color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 10%, transparent);
 }
 
 .tile-icon {
