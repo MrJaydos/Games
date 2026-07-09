@@ -1,4 +1,7 @@
 const grid = document.getElementById("game-grid");
+const countEl = document.getElementById("game-count");
+const liveCount = games.filter(g => !g.comingSoon).length;
+countEl.textContent = `${liveCount} game${liveCount !== 1 ? 's' : ''}`;
 
 games.forEach((game, i) => {
   const a = document.createElement("a");

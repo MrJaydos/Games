@@ -4,6 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>alfi3 · Games</title>
+    <meta name="description"  content="Self-hosted game launcher — Snake, Afterglow, Solitaire and more." />
+    <meta name="theme-color"  content="#0d0f14" />
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🕹</text></svg>" />
     <meta property="og:type"        content="website" />
     <meta property="og:title"       content="alfi3 · Games" />
@@ -18,6 +20,7 @@
       <div class="header-inner">
         <span class="logo" aria-hidden="true">🕹</span>
         <h1>alfi3 <span class="header-sub">/ games</span></h1>
+        <span class="game-count" id="game-count" aria-live="polite"></span>
       </div>
     </header>
 
@@ -26,7 +29,7 @@
     </main>
 
     <footer>
-      <p>Self-hosted on the homelab · <a href="https://github.com" target="_blank" rel="noopener noreferrer">GitHub</a></p>
+      <p>Self-hosted on the homelab · <a href="https://github.com/MrJaydos/Games" target="_blank" rel="noopener noreferrer">GitHub</a></p>
     </footer>
 
     <!-- games.js must load before app.js -->

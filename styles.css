@@ -69,6 +69,17 @@ h1 {
   font-weight: 400;
 }
 
+.game-count {
+  margin-left: auto;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  padding: 3px 10px;
+  border-radius: 999px;
+}
+
 /* ── Main ── */
 main {
   flex: 1;
@@ -258,4 +269,9 @@ footer a:hover { color: var(--text); }
 
 @media (max-width: 380px) {
   .grid { grid-template-columns: 1fr; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tile { animation: none; }
+  .tile-thumb img { transition: none; }
 }
