@@ -13,7 +13,7 @@
     <meta name="twitter:card"        content="summary" />
     <meta name="twitter:title"       content="alfi3 · Games" />
     <meta name="twitter:description" content="Self-hosted game launcher — Snake, Afterglow, Solitaire and more." />
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="styles.css?v=__BUILD__" />
   </head>
   <body>
     <header>
@@ -33,7 +33,9 @@
     </footer>
 
     <!-- games.js must load before app.js -->
-    <script src="games.js"></script>
-    <script src="app.js"></script>
+    <!-- ?v=__BUILD__ is replaced with a build timestamp in the Dockerfile
+         so every deploy busts browser/CDN caches for these assets -->
+    <script src="games.js?v=__BUILD__"></script>
+    <script src="app.js?v=__BUILD__"></script>
   </body>
 </html>
